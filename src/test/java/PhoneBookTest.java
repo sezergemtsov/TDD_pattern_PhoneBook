@@ -9,7 +9,7 @@ import java.io.PrintStream;
 public class PhoneBookTest {
 
     PhoneBook book;
-    private ByteArrayOutputStream output = new ByteArrayOutputStream();
+    private final ByteArrayOutputStream output = new ByteArrayOutputStream();
 
     @BeforeEach
     public void set() {
@@ -137,7 +137,7 @@ public class PhoneBookTest {
         String name1 = "Alice";
         String number1 = "8 800 555 35 35";
 
-        String expectedResult = "Alice\n\rCarl\n\r";
+        String expectedResult = "Alice\r\nCarl\r\n";
         //act
         book.add(name, number);
         book.add(name1, number1);
@@ -148,7 +148,6 @@ public class PhoneBookTest {
         Assertions.assertEquals(expectedResult, output.toString());
 
     }
-
 
 
 }
