@@ -53,4 +53,36 @@ public class PhoneBookTest {
         Assertions.assertEquals(expectedResult, result);
     }
 
+    @Test
+    public void findByNumberTrueTest() {
+        //arrange
+        String name = "Carl";
+        String number = "8 800 555 35 35";
+        String expectedResult = "Carl";
+
+        //act
+        book.add(name, number);
+        String result = book.findByNumber(number);
+
+        //assert
+        Assertions.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void findByNumberFalseTest() {
+        //arrange
+        String name = "Carl";
+        String number = "8 800 555 35 35";
+        String expectedResult = "Carl";
+
+        //act
+        book.add(name, number);
+        String result = book.findByNumber("8 800 555 35 36");
+
+        //assert
+        Assertions.assertEquals(expectedResult, result);
+    }
+
+
+
 }
