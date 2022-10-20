@@ -1,4 +1,7 @@
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class PhoneBookTest {
 
@@ -26,10 +29,10 @@ public class PhoneBookTest {
         int expectedResult = 2;
         //act
         book.add(name, number);
-        int result = book.add(name1,number1);
+        int result = book.add(name1, number1);
 
         //assert
-        Assertions.assertEquals(expectedResult,result);
+        Assertions.assertEquals(expectedResult, result);
     }
 
     @Test
@@ -44,10 +47,10 @@ public class PhoneBookTest {
         int expectedResult = 1;
         //act
         book.add(name, number);
-        int result = book.add(name1,number1);
+        int result = book.add(name1, number1);
 
         //assert
-        Assertions.assertEquals(expectedResult,result);
+        Assertions.assertEquals(expectedResult, result);
     }
 
 }
