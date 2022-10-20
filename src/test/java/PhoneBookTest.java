@@ -111,12 +111,12 @@ public class PhoneBookTest {
         String name1 = "Alice";
         String number1 = "8 800 555 35 35";
 
-        String expectedResult = "8 800 555 35 36";
+        String expectedResult = null;
         //act
         book.add(name, number);
         book.add(name1, number1);
 
-        String result = book.findByName("Alice");
+        String result = book.findByName("Alica");
 
         //assert
         Assertions.assertEquals(expectedResult, result);
