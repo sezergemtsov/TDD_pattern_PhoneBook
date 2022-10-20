@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
@@ -19,6 +20,15 @@ public class PhoneBook {
     }
 
     public String findByNumber(String number) {
+
+        Iterator iterator = phoneBook.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry pair = (Map.Entry) iterator.next();
+            if (number == pair.getValue()) {
+                return (String) pair.getKey();
+            }
+        }
         return null;
     }
+
 }
